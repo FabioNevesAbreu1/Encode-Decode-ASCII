@@ -1,0 +1,16 @@
+{
+  "name": "ASCII",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "Fabio Abreu",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
