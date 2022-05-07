@@ -1,12 +1,7 @@
 const http = require("http");
 const port = 8090
 
-const routes = {
-   POST: {
-      "/encode": require('./controllers/encode'),
-      "/decode": require('./controllers/decode'),
-   },
-};
+const routes = require('./routes')
 const validateMethod = require('./middleware/validateMethod')
 const validateBody = require('./middleware/validate')
 
@@ -62,7 +57,7 @@ http
             
             return response.end();
          } catch ({status, msg}) {
-            response.writeHead(200, {
+            response.writeHead(status, {
                "Content-Type": "application/json"
             });
             response.write(
