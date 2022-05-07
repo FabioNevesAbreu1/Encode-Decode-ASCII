@@ -29,20 +29,6 @@ http
 
       request.on("data", async function (chunk) {
          try {
-            if (!Object.keys(routes).includes(request.method)) {
-               throw {
-                  status: 404,
-                  msg: "Method not allowed",
-               };
-            }
-
-            if (!Object.keys(routes[request.method]).includes(request.url)) {
-               throw {
-                  status: 405,
-                  msg: "Route not found",
-               };
-            }
-
             const {error, ...body} = validateBody(JSON.parse(chunk + ""), request.url)
             if(error){
                throw error
